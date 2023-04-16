@@ -28,19 +28,23 @@ public class ManagePhoneBook {
                     //Insert some random contact
                     int num = (int) (Math.random()*10 + 1);//create number from 1 to 10
                     String phoneNum = Utils.generateRandomNumberAsString();
-                    Contact contact = new Contact(Utils.generateRandomString(num),phoneNum, new Type(num,Type.types[(int)Math.random()*4+1]));
+                    int ran4 = (int)(Math.random()*4);
+                    System.out.println("random num: "+ran4);
+                    Contact contact = new Contact(Utils.generateRandomString(num),phoneNum, new Type(num,Type.types[ran4]));
                     manage.insertPhone(contact);
                     break;
                 case 2:
                     System.out.println("Input contact name:");
-                    String name = scanner.nextLine();
+                    String name = scanner.next();
                     System.out.println("Input phone number:");
                     String phoneNumber = scanner.next();
                     manage.updatePhone(name, phoneNumber);
                     break;
                 case 3:
-                    String phonename = scanner.nextLine();
+                    System.out.println("Input search name:");
+                    String phonename = scanner.next();
                     Contact ct = manage.searchPhone(phonename);
+                    System.out.println(ct);
                     break;
                 case 4:
                     manage.display(null);

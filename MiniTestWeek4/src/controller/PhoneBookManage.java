@@ -24,7 +24,7 @@ public class PhoneBookManage extends Phone implements IPhone {
                     .forEach(System.out::println);
         } else {
             list_phone.values().stream()
-                    .filter(e -> e.getType() == type)
+                    .filter(e -> e.getType().equals(type))
                     .toList()
                     .forEach(System.out::println);
         }
