@@ -59,4 +59,8 @@ public class PhoneBookManage extends Phone implements IPhone {
     public void sort() {
 
     }
+
+    public void writeToFile(String name) {
+        WriteFile.writeToFile(name, list_phone.toString());
+    }
 }

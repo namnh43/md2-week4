@@ -1,10 +1,12 @@
 package viewer;
 
 import controller.PhoneBookManage;
+import controller.WriteFile;
 import model.phone.Contact;
 import model.phone.subclass.Type.Type;
 import util.Utils;
 
+import java.util.HashMap;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -20,6 +22,7 @@ public class ManagePhoneBook {
             System.out.println("3. Search a contact");
             System.out.println("4. Display phonebook");
             System.out.println("5. Display phonebook by type");
+            System.out.println("6. Write phonebook to file");
             System.out.println("0: Exit!");
             Scanner scanner = new Scanner(System.in);
             Integer number = scanner.nextInt();
@@ -54,6 +57,9 @@ public class ManagePhoneBook {
                     String typeName = scanner.next();
                     Type searchType = new Type(typeName);
                     manage.display(searchType);
+                    break;
+                case 6:
+                    manage.writeToFile("output.dat");
                     break;
                 case 0:
                     exited = true;
