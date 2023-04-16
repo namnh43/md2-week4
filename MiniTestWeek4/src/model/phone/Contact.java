@@ -36,4 +36,13 @@ public class Contact {
     public void setType(Type type) {
         this.type = type;
     }
+
+    @Override
+    public String toString() {
+        return "Contact{" +
+                "name='" + name + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", type=" + type +
+                '}';
+    }
 }

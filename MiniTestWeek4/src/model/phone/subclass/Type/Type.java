@@ -3,20 +3,34 @@ package model.phone.subclass.Type;
 import java.util.Objects;
 
 public class Type {
-    private String type;
+    private int id;
     private String name;
 
-    public Type(String type, String name) {
-        this.type = type;
+    @Override
+    public String toString() {
+        return "Type{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
+
+    public static final String[] types = {"Gia_Dinh","Truong_Hoc","Cong_ty","Ca_Nhan"};
+
+    public Type(int id, String name) {
+        this.id = id;
         this.name = name;
     }
 
-    public String getType() {
-        return type;
+    public Type(String name) {
+        this.name = name;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public int getId() {
+        return id;
+    }
+
+    public void setType(int id) {
+        this.id = id;
     }
 
     public String getName() {
